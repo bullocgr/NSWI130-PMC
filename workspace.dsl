@@ -161,11 +161,12 @@ workspace "Patient monitoring and control (PMC) workspace" "This workspace docum
         }
 
         dynamic pmcServer "Vitals_Signs_Component_Dynamic_View" "Patient Monitoring and Control - Vital Signs Monitory Scenario"{
-            patientDataAPI -> dataReader "inform to fetch latest data"
+            vitalSigns -> dataReader "inform to fetch latest data"
             dataReader -> prtds "fetch latest data"
             prtds -> dataReader "return latest data"
-            dataReader -> patientDataAPI "return latest data"
-            patientDataAPI -> webFrontend "alert emergency if necessary"
+            dataReader -> vitalSigns "return latest data"
+            vitalSigns -> patientDataAPI "inform emergency if necessary"
+            patientDataAPI -> webFrontend "inform emergency if necessary"
             autoLayout  
         }
 
