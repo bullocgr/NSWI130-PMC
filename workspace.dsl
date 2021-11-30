@@ -152,7 +152,7 @@ workspace "Patient monitoring and control (PMC) workspace" "This workspace docum
         dynamic * "Hospitalization_System_Dynamic_View" "Patient Monitoring and Control - Hospitalization Scenario"{
             patients -> rop  "register hospitalization"
             rop -> prtds "update patient list"
-            prtds -> pmac "inform to update"
+            //prtds -> pmac "inform to update"
             //dataReader -> webFrontend "update the cache"
             barCode -> pmac "prescribe medicine"
             pmac -> prtds "write prescription"
