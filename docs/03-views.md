@@ -37,10 +37,10 @@ In a more detail, the Vital Signs Monitering Component informs the Data reader t
 
 ![](embed:Vitals_Signs_Component_Dynamic_View)
 
-#### #Doctor Check Component Dynamic View
+#### Doctor Check Component Dynamic View
 In a more detail, the Patient API informs the Data reader to fetch lastest data, so it sends the request to the Data system which returns the latest data to the Data Reader which will transmit it to the Patient API. Finally, the Patient API will send an emergency alert the Web Front-end if necessary.
 
-![](embed:#Doctor_Check_Component_Dynamic_View)
+![](embed:Doctor_Check_Component_Dynamic_View)
 
 ### PMC Deployment View
 ![](embed:PatientMonitoringandControlPMC-Live-Deployment)
