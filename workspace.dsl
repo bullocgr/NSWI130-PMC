@@ -18,6 +18,7 @@ workspace "Patient monitoring and control (PMC) workspace" "This workspace docum
                     patientSpecific = component "Department Patients Data Storage"
                 }
             }
+            !docs docs
         }
 
         //barcode scanner has more software to unpack the contents of the barcode
