@@ -6,6 +6,7 @@ The software architecture of PMC is further documented according to the [C4 mode
 The documentation also uses supplementary diagrams - [deployment diagrams](https://c4model.com/#DeploymentDiagram) and [dynamic diagrams](https://c4model.com/#DynamicDiagram).
 
 ### PMC Decomposition View
+#### PMC Decomposition View - Container Level
 
 PMC business functionality is implemented by the PMC Server container.
 Doctors interact with a web application provided by MPC Web Front-end container.
@@ -14,7 +15,7 @@ The server container uses the Patients Real Time Data System to read and write p
 
 ![](embed:PMC_Container_View)
 
-### PMC Server Decomposition View
+#### PMC Decomposition View - Component Level
 
 PMC Server implements the business functionality of PMC.
 Its internal architecture comprises 3 layers:
@@ -24,30 +25,22 @@ Its internal architecture comprises 3 layers:
 
 ![](embed:PMC_Server_Component_View)
 
-### Hospitalization System Dynamic Views
+### PMC Dynamic View
+#### Hospitalization System Dynamic View
 
-The patients register to get in the hospital, consequently the list of patients is updated. Then the Data System informs the PMC of a new patient, so that doctors can write a new prescription using the barcode scanner. Finally, the PMC treats the request and give the prescription to the Data system to write it in the database.
+The patients register to get in the hospital, consequently the list of patients is updated. Then doctors can write a new prescription using the barcode scanner. Finally, the PMC treats the request to write it in the database.
 
 ![](embed:Hospitalization_System_Dynamic_View)
 
-#### MPC Containers Dynamic Views
-In a more detail, the Patient API informs the Data reader to fetch lastest data, so it sends the request to the Data system which returns the latest data to the Data Reader which will transmit it to the Patient API. Finally, the Patient API will send an emergency alert the Web Front-end if necessary.
-
+#### Vital Signs Component Dynamic View
+In a more detail, the Vital Signs Monitering Component informs the Data reader to fetch lastest data, so it sends the request to the Data system which returns the latest data to the Data Reader which will transmit it to the Vital Signs Monitering Component to analyze. Finally, Vital Signs Monitering Component will inform the Patient API to send an emergency alert to the Web Front-end if necessary.
 
 ![](embed:Vitals_Signs_Component_Dynamic_View)
 
-### MPC Deployments
+#### #Doctor Check Component Dynamic View
+In a more detail, the Patient API informs the Data reader to fetch lastest data, so it sends the request to the Data system which returns the latest data to the Data Reader which will transmit it to the Patient API. Finally, the Patient API will send an emergency alert the Web Front-end if necessary.
 
-There exist various MPC deployment environments. (which we don't have yet :)
+![](embed:#Doctor_Check_Component_Dynamic_View)
 
-#### MPC Server Development Deployment
-
-(This deployment is mandatory for all NODC Server developers and their unit tests.)
-
-![](embed:Server_Development_Deployment)
-
-#### MPC Live Deployment
-
-(This deployment is the current production environment of NODC.)
-
-![](embed:Live_Deployment)
+### PMC Deployment View
+![](embed:PatientMonitoringandControlPMC-Live-Deployment)
