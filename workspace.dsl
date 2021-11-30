@@ -146,6 +146,7 @@ workspace "Patient monitoring and control (PMC) workspace" "This workspace docum
 
         deployment pmac "Live" {
             include *
+            autoLayout
         }
 
         dynamic * "Hospitalization_System_Dynamic_View" "Patient Monitoring and Control - Hospitalization Scenario"{
